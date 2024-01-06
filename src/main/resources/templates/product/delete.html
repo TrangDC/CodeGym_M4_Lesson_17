@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${title} + ' Product'"></h1>
+<p>
+    <a href="/api/products">Back to list</a>
+</p>
+<form method="post" th:object="${product}">
+    <table>
+        <tr>
+            <td>Name: </td>
+            <td>
+                <label for="name">
+                    <input id="name" disabled th:field="*{name}">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Price: </td>
+            <td>
+                <label for="price">
+                    <input id="price" disabled th:field="*{price}">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Description: </td>
+            <td>
+                <label for="description">
+                    <textarea id="description" disabled th:field="*{description}"></textarea>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>Producer: </td>
+            <td>
+                <label for="producer">
+                    <input id="producer" disabled th:field="*{producer}">
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Delete" onclick="return confirm('Are you sure?')"></td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
